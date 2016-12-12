@@ -25,17 +25,17 @@ What does quality code look like?
 ## User Stories & Specifications
 
 **As a User...**
-- [ ] I can access the app the web.
-- [ ] Choose 1 of (at least) 3 card layouts.
-- [ ] Learn about each card layouts.
-- [ ] Sort cards into the layouts face down and click them to turn them over.
-- [ ] I can get self reflection questions based on my card results.
-- [ ] I am pleased by the user experience. The app is both attractive and intuitive to use.
+- [X ] I can access the app the web.
+- [Stretch] Choose 1 of (at least) 3 card layouts.
+- [X ] Learn about each card layouts.
+- [X] Sort cards into the layouts face down and click them to turn them over.
+- [X] I can get self reflection questions based on my card results.
+- [Stretch] I am pleased by the user experience. The app is both attractive and intuitive to use.
 
 **Additional Specifications:**
-- [ ] Create a library of Tarot cards and write a function that randomly presents them
-- [ ]  If you use any frameworks or code libraries cite them.
-- [ ] Use design & UX principals to make the app clear and easy to use.
+-  X] Create a library of Tarot cards and write a function that randomly presents them
+- [X]  If you use any frameworks or code libraries cite them.
+- [Stretch] Use design & UX principals to make the app clear and easy to use.
 - [ ] Use Node to create a back end
 - [ ] Use React Native to create and deploy a functional phone app.
 - [ ] This is a multi page app:

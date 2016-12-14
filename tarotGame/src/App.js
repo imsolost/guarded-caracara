@@ -1,52 +1,61 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import _ from 'lodash'
 import Deck from '../src/deck'
+//import Card from '../components/card'
 
-console.log('Deck', Deck);
-
+const deck = ('Deck', Deck);
 
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {card: null}
+  }
+
+  updateCard(card) {
+    this.setState(Object.assign(this.state, {card: card}))
+  }
   render() {
-    const pastButton = <button onClick={drawCard}>Past</button>
-    const presentButton = <button onClick={drawCard}>Present</button>
-    const futureButton = <button onClick={drawCard}>Future</button>
-
-    // constructor() {
-    //   this.reset()
-    // } // why do we need this?
-
-    function shuffle() {
-      this.deck = _.shuffle(this.deck);
-    }
+    let pastButton = <button onClick={drawCard.bind(this)}>Past</button>
+    let presentButton = <button onClick={drawCard.bind(this)}>Present</button>
+    let futureButton = <button onClick={drawCard.bind(this)}>Future</button>
 
     function drawCard () {
-      return this.setReversed(this.deck.pop())
-      console.log(this)
-    }
-    function setReversed(card) {
-      this.card.reversed =  (Math.random() > .5)  ? true : false
+     let card = _.shuffle(deck).pop()
+     if (Math.random() > .5) {card.reversed = true} else {card.reversed = false}
+     this.updateCard(card.name)
     }
 
 
-    function reset() {
-      this.deck = _.shuffle(Deck)
-    }
+    // function reset() {
+    //   this.Deck = _.shuffle(Deck)
+    // }
 
-    return (
+
+//  handleClick() {
+//    display current card name ;
+// }
+//
+      return (
       <div>
         {pastButton}
         {presentButton}
         {futureButton}
+        {this.state.card}
       </div>
+        //<img src="{this.state.card}"/>
+    )
       //<Cards hand={this.method.bind(this)}/>
       // <div className="cardDescription">
       //   {this.props.description}
       // </div>
 
+      //onClick => this.drawCard() className="past")}
 
-    )
+
+
   }
 }
 export default App;

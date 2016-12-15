@@ -4,10 +4,10 @@ import './App.css';
 import _ from 'lodash'
 import Deck from '../src/deck'
 //import Card from '../components/card'
-//import FlipCard from '../node_modules/react-native-flip-card/index'
+//import FlipCard from 'react-native-flip-card'
 
-const deck = ('Deck', Deck);
-let currentDeck = deck
+const deck = ("Deck", Deck)
+let currentDeck = deck;
 let cardBack = <img src={process.env.PUBLIC_URL + "/images/cardBack.jpg"} style={{width: 200, height: 300}}/>
 
 class App extends Component {
@@ -56,16 +56,40 @@ class App extends Component {
     const cardDescription = this.state.card ?
         this.state.card.description
         : null
+// in drawCard
+  //cardflipped
+
+
+let flipCard = <button onClick={drawCard.bind(this)} className="card-container">
+                  <div className="tarotCard">
+                    <div className="front">{cardImage} </div>
+                    <div className="back">{cardBack} </div>
+
+                  </div>
+              </button>
+
+
 
       return (
       <div>
         {pastButton}
-        {presentButton}
-        {futureButton}
         {resetButton}
         {cardImage}
         {cardDescription}
+        {flipCard}
+        {flipCard}
+        {flipCard}
       </div>
+// HTML
+//     <div class="card-container">
+//         <div class ="flipcard "></div>
+//     </div>
+
+//  <div className="cardPosition"> {position}</div>
+
+//
+// CSS
+
 
 
         //<img src="{this.state.card}"/>

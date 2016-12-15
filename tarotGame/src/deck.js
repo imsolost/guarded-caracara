@@ -1,4 +1,9 @@
 module.exports = [
+  { name: 'cardBack',
+    reversed: false,
+    image: process.env.PUBLIC_URL + "/images/cardBack.jpg",
+    description: " Are you ready?"
+  },
   { name: 'cups01',
     reversed: false,
     image: process.env.PUBLIC_URL + "/images/cups01.jpg",

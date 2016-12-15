@@ -4,24 +4,27 @@ import './App.css';
 import _ from 'lodash'
 import Deck from '../src/deck'
 //import Card from '../components/card'
+//import FlipCard from '../node_modules/react-native-flip-card/index'
 
 const deck = ('Deck', Deck);
 let currentDeck = deck
+let board = ["4", "3"]
 
 class App extends Component {
 
   constructor() {
     super()
     this.state = {card: null}
-    //this.state = {deck.props}
   }
 
   updateCard(card) {
     this.setState(Object.assign(this.state, {card: card}))
   }
 
+
+
   render() {
-    let pastButton = <button onClick={drawCard.bind(this)}>Past</button>
+    let pastButton = <button onClick={drawCard.bind(this)}>{board}</button>
     let presentButton = <button onClick={drawCard.bind(this)}>Present</button>
     let futureButton = <button onClick={drawCard.bind(this)}>Future</button>
     let resetButton = <button onClick={reset}>Restart</button>
@@ -45,12 +48,15 @@ class App extends Component {
 //    display current card name ;
 // }
 //
-   const cardImage = this.state.card ?
+    const cardImage = this.state.card ?
        <img src={this.state.card.image}  alt={this.state.card.name} />
        : null
-    // const cardDescription = this.state.card ?
-    //     {this.state.card.description}  alt={this.state.card.name}
-    //     : null
+
+     //const cardBack = <img src=process.env.PUBLIC_URL + "/images/cardBack.jpg" />
+
+    const cardDescription = this.state.card ?
+        this.state.card.description
+        : null
 
       return (
       <div>
@@ -59,10 +65,10 @@ class App extends Component {
         {futureButton}
         {resetButton}
         {cardImage}
-
+        {cardDescription}
       </div>
 
-// {cardDescription}
+
         //<img src="{this.state.card}"/>
     )
       //<Cards hand={this.method.bind(this)}/>

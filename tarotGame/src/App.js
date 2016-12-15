@@ -8,7 +8,7 @@ import Deck from '../src/deck'
 
 const deck = ('Deck', Deck);
 let currentDeck = deck
-let board = ["4", "3"]
+let cardBack = <img src={process.env.PUBLIC_URL + "/images/cardBack.jpg"} style={{width: 200, height: 300}}/>
 
 class App extends Component {
 
@@ -22,11 +22,10 @@ class App extends Component {
   }
 
 
-
   render() {
-    let pastButton = <button onClick={drawCard.bind(this)}>{board}</button>
-    let presentButton = <button onClick={drawCard.bind(this)}>Present</button>
-    let futureButton = <button onClick={drawCard.bind(this)}>Future</button>
+    let pastButton = <button onClick={drawCard.bind(this)}>{cardBack}</button>
+    let presentButton = <button onClick={drawCard.bind(this)}>{cardBack}</button>
+    let futureButton = <button onClick={drawCard.bind(this)}>{cardBack}</button>
     let resetButton = <button onClick={reset}>Restart</button>
 
     function drawCard () {
@@ -49,7 +48,7 @@ class App extends Component {
 // }
 //
     const cardImage = this.state.card ?
-       <img src={this.state.card.image}  alt={this.state.card.name} />
+       <img src={this.state.card.image} style={{width: 200, height: 300}}/>
        : null
 
      //const cardBack = <img src=process.env.PUBLIC_URL + "/images/cardBack.jpg" />

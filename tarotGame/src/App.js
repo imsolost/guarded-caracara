@@ -79,6 +79,8 @@ const cardDescription = this.state.card ?
         this.state.card.description
         : null
 
+  
+
   // let flipper = (function() {
   //         var cards = document.querySelectorAll(".card.effect__click");
   //         for ( var i  = 0, len = cards.length; i < len; i++ ) {

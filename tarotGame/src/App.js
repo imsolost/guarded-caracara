@@ -8,7 +8,7 @@ import Deck from '../src/deck'
 
 const deck = ("Deck", Deck)
 let currentDeck = deck;
-let dealtCards = [];
+let dealtCards = ["", "", ""];
 let cardBack = <img src={process.env.PUBLIC_URL + "/images/cardBack.jpg"} style={{width: 200, height: 300}}/>
 const initialState = {};
 
@@ -31,13 +31,33 @@ class App extends Component {
     let resetButton = <button onClick={reset}>Restart</button>
 
 
-    function drawCard () {
+    function drawCard0 () {
      let card = _.shuffle(currentDeck).pop()
      if (Math.random() > .5) {card.reversed = true} else {card.reversed = false}
      this.updateCard(card)
      currentDeck = currentDeck.filter(function(el) {
       return el.name !== card.name})
-     dealtCards.push(card)
+     dealtCards[0] = card
+     console.log(dealtCards)
+    }
+
+    function drawCard1 () {
+     let card = _.shuffle(currentDeck).pop()
+     if (Math.random() > .5) {card.reversed = true} else {card.reversed = false}
+     this.updateCard(card)
+     currentDeck = currentDeck.filter(function(el) {
+      return el.name !== card.name})
+     dealtCards[1] = card
+     console.log(dealtCards)
+    }
+
+    function drawCard2 () {
+     let card = _.shuffle(currentDeck).pop()
+     if (Math.random() > .5) {card.reversed = true} else {card.reversed = false}
+     this.updateCard(card)
+     currentDeck = currentDeck.filter(function(el) {
+      return el.name !== card.name})
+     dealtCards[2] = card
      console.log(dealtCards)
     }
 
@@ -52,7 +72,7 @@ class App extends Component {
 
      function reset() {
        currentDeck = deck
-       dealtCards = [];
+       dealtCards = ["", "", ""];
        console.log(initialState)
        //this.setState(initialState);
      }
@@ -95,15 +115,15 @@ let image0 = dealtCards[0] ? <img src={process.env.PUBLIC_URL + dealtCards[0].im
 let image1 = dealtCards[1] ? <img src={process.env.PUBLIC_URL + dealtCards[1].image} style={{width: 200, height: 300}}/> : cardBack
 let image2 = dealtCards[2] ? <img src={process.env.PUBLIC_URL + dealtCards[2].image} style={{width: 200, height: 300}}/> : cardBack
 
-let flipCard1 = <div className="tarotCard1" onClick={drawCard.bind(this)} >
+let flipCard1 = <div className="tarotCard1" onClick={drawCard0.bind(this)} >
                     <div className="front">{dealtCards[0]  ? image0  : cardBack} </div>
               </div>
 
-let flipCard2 = <div className="tarotCard2" onClick={drawCard.bind(this)} >
+let flipCard2 = <div className="tarotCard2" onClick={drawCard1.bind(this)} >
                           <div className="front">{dealtCards[1]  ? image1  : cardBack} </div>
                   </div>
 
-  let flipCard3 = <div className="tarotCard3" onClick={drawCard.bind(this)} >
+  let flipCard3 = <div className="tarotCard3" onClick={drawCard2.bind(this)} >
                       <div className="front">{dealtCards[2] ? image2  : cardBack} </div>
                   </div>
 // let flipCard = <div className="tarotCard" onClick={drawCard.bind(this)} >

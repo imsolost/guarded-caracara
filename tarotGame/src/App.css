@@ -24,6 +24,7 @@
 }
 
 
+
 .tarotCard1 {
   float: left;
   width:200px;
@@ -52,7 +53,7 @@
   display: inline-block;
   margin-left: 300px;
 }
-/*}
+
 .front, .back {
   position: absolute;
   top:0;
@@ -68,4 +69,9 @@
 }
 .tarotCard:active {
   transform: rotateY(180deg);
-}*/
+}
+
+body {
+    background-image: url(../public/images/boardimage.jpg);
+    background-size: cover;
+}

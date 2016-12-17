@@ -70,14 +70,14 @@
 }
 
 body {
-    background-image: url(../public/images/boardimage.jpg);
+    background-image: url(../public/images/Fantasy-Full-HD-Pics-Wallpapers.jpg);
     background-size: cover;
 }
 .Past {
   width: 220px;
   float: left;
   font-family: ourFont;
-  color: #778899;
+  color: #02020c;
   font-size: 24px;
 }
 
@@ -85,14 +85,14 @@ body {
   width: 230px;
   float: left;
   font-family: ourFont;
-  color: #778899;
+  color: #02020c;
   font-size: 24px;
 }
 .Future {
   width: 210px;
   float: left;
   font-family: ourFont;
-  color: #778899;
+  color: #02020c;
   font-size: 24px;
 }
 .board {
@@ -110,7 +110,7 @@ padding: 15px;
 .Fortune {
   clear: both;
   font-family: ourFont;
-  color: #778899;
+  color: #02020c;
   font-size: 24px;
   padding: 15px;
 }

@@ -94,13 +94,17 @@ let flipCard1 = <div className="tarotCard1" onClick={drawCard0.bind(this)} >
                     <div className="Past"> Past </div>
               </div>
 
-let flipCard2 = <div className="tarotCard2" onClick={drawCard1.bind(this)} >
-                          <div className="front">{dealtCards[1]  ? image1  : cardBack} </div>
+
+
+
+  let flipCard2 = <div className="tarotCard2" onClick={drawCard1.bind(this)} >
+                      <div className="front">{dealtCards[1]  ? image1  : cardBack} </div>
                   </div>
 
 let flipCard3 = <div className="tarotCard3" onClick={drawCard2.bind(this)} >
                       <div className="front">{dealtCards[2] ? image2  : cardBack} </div>
                   </div>
+
 
 let past = <div className='newLevel'><div className="Past"> Past </div>
 
@@ -111,6 +115,8 @@ let past = <div className='newLevel'><div className="Past"> Past </div>
 let fortune = <div className="Fortune">{cardDescription}</div>
 
 return (
+
+
       <div className="board">
         {past}
         {resetButton}
